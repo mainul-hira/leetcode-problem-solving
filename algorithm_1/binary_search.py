@@ -5,18 +5,16 @@ def search(nums, target):
     low = 0
     high=len(nums)-1
     while index==-1:
-        print('hi')
-        print((low+high)//2)
         mid = (low+high)//2
-        if high==low and nums[low]!=target:
-            break
         if nums[mid]==target:
             index = mid
         elif nums[mid]>target:
-            high = mid
+            high = mid-1
         else:
-            low = mid
-    print(index)
+            low = mid+1
+        if low>high:
+            break
     return index
+
        
-print(search([-1,0,3,5,9,12], 2))
+print(search([2,5], 5))
