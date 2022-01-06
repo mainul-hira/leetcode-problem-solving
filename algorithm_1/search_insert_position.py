@@ -6,23 +6,25 @@ def search(nums, target):
     index = -1
     low = 0
     high = len(nums)-1
-    last_mid = -1
-    while low<high:
+    # last_mid = -1
+    while low<=high:
         mid = (low+high)//2
         if nums[mid] == target:
             index = mid
             break
         elif nums[mid]>target:
             high = mid-1
+            index = mid
         else:
             low = mid+1
-        last_mid = mid
+            index = mid + 1 
+        # last_mid = mid
     # print(last_mid)
-    if index==-1:
-        if nums[last_mid]>target:
-            index = last_mid
-        else:
-            index = last_mid
+    # if index==-1:
+    #     if nums[last_mid]>target:
+    #         index = last_mid
+    #     else:
+    #         index = last_mid + 1 
     return index
 
-print(search([1,3,5,6,8,10], 9))
+# print(search([1,3,5,7], 6))
