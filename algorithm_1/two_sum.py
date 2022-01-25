@@ -1,8 +1,20 @@
-from ast import List
 
+def twoSum(nums, target):
+    # O(n^2) solution
+    # for i in range(len(nums)):
+    #     for j in range(i, len(nums)):
+    #         if (nums[i]+nums[j])==target:
+    #             print(i, j)
+    #             break
 
-class Solution:
-    def twoSum(self, nums: List[int], target: int) -> List[int]:
-        pass
+    # O(n) solution
+    # if nums[i] in data_dict (finding keys in dictionary is O(n) time)
+    data_dict = {}
 
-Solution.twoSum([2,7,11,15],9)
+    for i in range(len(nums)):
+        if nums[i] in data_dict:
+            print(data_dict[nums[i]], i)
+        else:
+            data_dict[target-nums[i]]=i
+    print(data_dict)
+twoSum([0,4,3,0], 0)
